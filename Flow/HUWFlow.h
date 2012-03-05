@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "HUWFlowDelegateWrapper.h"
 
+typedef UIImage* (^ImageLoaderBlock_t)(NSError** error);
+
 @interface HUWFlow : UIScrollView {
 @private
     HUWFlowDelegateWrapper *delegateWrapper;
@@ -18,6 +20,8 @@
 }
 
 -(void)addImageWithUrl:(NSURL *)url;
+-(void)addImage:(UIImage *)image;
+-(void)addImageWithLoader:(ImageLoaderBlock_t)image;
 -(void)setSelectedIndex:(int)index;
 -(void)setSelectedView:(UIView*)view;
 

@@ -121,6 +121,18 @@
 }
 
 -(void)addImageWithUrl:(NSURL *)url {
+    [self addImageWithLoader:^UIImage *(NSError *__autoreleasing *error) {
+        return [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+    }];
+}
+
+-(void)addImage:(UIImage *)image {
+    [self addImageWithLoader:^UIImage *(NSError *__autoreleasing *error) {
+        return image;
+    }];
+}
+
+-(void)addImageWithLoader:(ImageLoaderBlock_t)image {
     UIImageView *imageView = [[UIImageView alloc] init];
     [images addObject:imageView];
     int idx = [images indexOfObject:imageView];
@@ -128,7 +140,8 @@
     __block HUWFlow *s = self;
     
     [loaderQueue addOperationWithBlock:^{
-        imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+        NSError *error = nil;
+        imageView.image = image(&error);
         
         
         CGFloat size = self.bounds.size.width / 2;
