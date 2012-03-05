@@ -15,6 +15,7 @@
 
 -(void)__scrollViewDidScroll;
 -(void)__init;
+-(CGRect)__frameForImage:(UIImage*)image atIndex:(int)idx;
 -(void)setSelectedView:(UIView*)view animated:(BOOL)animated;
 
 @end
@@ -90,8 +91,7 @@
     for (int i=0; i<[images count]; i++) {
         UIImageView *imageView = [images objectAtIndex:i];
         
-        CGRect frame = CGRectMake(size / 2 + i * size, self.bounds.size.height / 2 - size / 2, size, size);
-        imageView.frame = frame;
+        imageView.frame = [self __frameForImage:imageView.image atIndex:i];
         
         if (imageView.layer.sublayers.count) {
             [[imageView.layer.sublayers objectAtIndex:0] removeFromSuperlayer];
@@ -149,9 +149,7 @@
             imageView.image = [self.flowDelegate flowFailedToLoadImage:idx];
         }
         
-        
-        CGFloat size = self.bounds.size.width / 2;
-        CGRect frame = CGRectMake(size / 2 + idx * size, self.bounds.size.height / 2 - size / 2, size, size);
+        CGRect frame = [s __frameForImage:imageView.image atIndex:idx];
         imageView.frame = frame;
         
         UIImage *reflection = [HUWImageHelpers reflectedImage:imageView withHeight:50];
@@ -162,7 +160,7 @@
         sublayer.frame = CGRectMake(0, frame.size.height + 20, frame.size.width, reflection.size.height);
         [imageView.layer addSublayer:sublayer];
         
-        frame.size.width += size / 2.0f;
+        frame.size.width += frame.size.width / 2.0f;
         CGSize contentSize = CGRectUnion(self.bounds, frame).size;
         self.contentSize = contentSize;
         
@@ -171,6 +169,17 @@
             [s __scrollViewDidScroll];
         });
     }];
+}
+
+-(CGRect)__frameForImage:(UIImage*)image atIndex:(int)idx {
+    CGFloat width = self.bounds.size.width / 2;
+    CGFloat aspect = image.size.width / width;
+    CGFloat height = image.size.height / aspect;
+    
+    CGRect rect = CGRectMake(width / 2 + idx * width, self.bounds.size.height / 2 - height / 2,
+               width, height);
+    
+    return CGRectIntegral(rect);
 }
 
 -(void)__scrollViewDidScroll {
