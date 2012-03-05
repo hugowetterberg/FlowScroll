@@ -1,6 +1,6 @@
 Flow Scroll
 ==================
 
-![Screen shot](https://github.com/hugowetterberg/FlowScroll/raw/master/pictures/screen.jpg "The view in action")
+![Screen shot](https://github.com/hugowetterberg/FlowScroll/raw/master/pictures/screen.png "The view in action")
 
 Sample code for creating a simple cover flow-esque scroll view. The view is implemented as a subclass of UIScrollView and is populated with images from an URI. Other add methods (using already loaded images et.c.) and a delegate that recieves selection events should be added.
