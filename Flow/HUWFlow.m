@@ -119,13 +119,19 @@
 -(void)addImageWithUrl:(NSURL *)url {
     [self addImageWithLoader:^UIImage *(NSError *__autoreleasing *error) {
         UIImage *image = nil;
-        NSData *data = [NSData dataWithContentsOfURL:url options:0 error:error];
-        if (!*error) {
-            image = [UIImage imageWithData:data];
-            if (!image) {
-                *error = [NSError errorWithDomain:@"nu.wetterberg.Flow" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"Could not read image", NSLocalizedDescriptionKey, nil]];
+        if (url) {
+            NSData *data = [NSData dataWithContentsOfURL:url options:0 error:error];
+            if (!*error) {
+                image = [UIImage imageWithData:data];
+                if (!image) {
+                    *error = [NSError errorWithDomain:@"nu.wetterberg.Flow" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"Could not read image", NSLocalizedDescriptionKey, nil]];
+                }
             }
         }
+        else {
+            *error = [NSError errorWithDomain:@"nu.wetterberg.Flow" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"Empty or malformed url for image", NSLocalizedDescriptionKey, nil]];
+        }
+        
         return image;
     }];
 }
@@ -140,6 +146,15 @@
     UIImageView *imageView = [[UIImageView alloc] init];
     [images addObject:imageView];
     int idx = [images indexOfObject:imageView];
+    
+    CGFloat width = self.bounds.size.width / 2;
+    __block UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    CGRect sframe = spinner.frame;
+    sframe.origin.x = width * (idx+1) - sframe.size.width / 2;
+    sframe.origin.y = self.bounds.size.height / 2 - sframe.size.height / 2;
+    spinner.frame = sframe;
+    [spinner startAnimating];
+    [self addSubview:spinner];
     
     __block HUWFlow *s = self;
     __block int *latest = &latestAdded;
@@ -170,6 +185,7 @@
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            [spinner removeFromSuperview];
             [s addSubview:imageView];
             [s __scrollViewDidScroll];
         });
