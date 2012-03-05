@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HUWFlow.h"
 
-@interface HUWViewController : UIViewController<UIScrollViewDelegate>
+@interface HUWViewController : UIViewController<UIScrollViewDelegate, HUWFlowDelegate>
 
 @property (weak, nonatomic) IBOutlet HUWFlow *scrollView;
 

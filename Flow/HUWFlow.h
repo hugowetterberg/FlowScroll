@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HUWFlowDelegateWrapper.h"
+#import "HUWFlowDelegate.h"
 
 typedef UIImage* (^ImageLoaderBlock_t)(NSError** error);
 
@@ -19,10 +20,12 @@ typedef UIImage* (^ImageLoaderBlock_t)(NSError** error);
     __weak UIView *selectedView;
 }
 
+@property (weak, nonatomic) id<HUWFlowDelegate> flowDelegate;
+
 -(void)addImageWithUrl:(NSURL *)url;
 -(void)addImage:(UIImage *)image;
 -(void)addImageWithLoader:(ImageLoaderBlock_t)image;
 -(void)setSelectedIndex:(int)index;
--(void)setSelectedView:(UIView*)view;
+-(void)setSelectedIndex:(int)index animated:(BOOL)animated;
 
 @end

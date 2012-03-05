@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9213E743150557DC00C7E970 /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 9213E742150557DC00C7E970 /* README.mdown */; };
+		9213E74615055BE400C7E970 /* Elizabeth_Stanton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9213E74515055BE400C7E970 /* Elizabeth_Stanton.png */; };
 		9241BE6E1501716B00C670CD /* HUWImageHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9241BE6D1501716B00C670CD /* HUWImageHelpers.m */; };
 		9241BE7215017EB100C670CD /* HUWFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9241BE7115017EB100C670CD /* HUWFlow.m */; };
 		9241BE75150183D100C670CD /* HUWFlowDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9241BE74150183D100C670CD /* HUWFlowDelegateWrapper.m */; };
@@ -33,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		9213E742150557DC00C7E970 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
+		9213E7441505585200C7E970 /* HUWFlowDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUWFlowDelegate.h; sourceTree = "<group>"; };
+		9213E74515055BE400C7E970 /* Elizabeth_Stanton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Elizabeth_Stanton.png; sourceTree = "<group>"; };
 		9241BE6C1501716B00C670CD /* HUWImageHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUWImageHelpers.h; sourceTree = "<group>"; };
 		9241BE6D1501716B00C670CD /* HUWImageHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUWImageHelpers.m; sourceTree = "<group>"; };
 		9241BE7015017EB100C670CD /* HUWFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUWFlow.h; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 				9241BE7115017EB100C670CD /* HUWFlow.m */,
 				9241BE73150183D100C670CD /* HUWFlowDelegateWrapper.h */,
 				9241BE74150183D100C670CD /* HUWFlowDelegateWrapper.m */,
+				9213E7441505585200C7E970 /* HUWFlowDelegate.h */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -142,6 +146,7 @@
 		92430C851500ECC1004A3E6F /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				9213E74515055BE400C7E970 /* Elizabeth_Stanton.png */,
 				92430C861500ECC1004A3E6F /* pic 001.jpg */,
 				92430C871500ECC1004A3E6F /* pic 002.jpg */,
 				92430C881500ECC1004A3E6F /* pic 003.jpg */,
@@ -219,6 +224,7 @@
 				92430C951500ECC1004A3E6F /* pic 008.jpg in Resources */,
 				92430C971500ECD4004A3E6F /* images.json in Resources */,
 				9213E743150557DC00C7E970 /* README.mdown in Resources */,
+				9213E74615055BE400C7E970 /* Elizabeth_Stanton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

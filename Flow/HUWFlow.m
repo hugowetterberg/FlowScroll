@@ -15,10 +15,13 @@
 
 -(void)__scrollViewDidScroll;
 -(void)__init;
+-(void)setSelectedView:(UIView*)view animated:(BOOL)animated;
 
 @end
 
 @implementation HUWFlow
+
+@synthesize flowDelegate = __flowDelegate;
 
 -(void)__init {
     images = [NSMutableArray array];
@@ -54,35 +57,27 @@
         UIView *view = [images objectAtIndex:i];
         
         if (CGRectContainsPoint(view.frame, point)) {
-            [self setSelectedView:view];
+            [self setSelectedView:view animated:YES];
+            [self.flowDelegate flowDidSelectItem:i];
             break;
         }
     }
 }
 
 -(void)setSelectedIndex:(int)index {
-    UIView *view = [images objectAtIndex:index];
-    [self setSelectedView:view];
+    [self setSelectedIndex:index animated:YES];
 }
 
--(void)setSelectedView:(UIView*)view {
-    if (selectedView.layer.sublayers.count == 2) {
-        [[selectedView.layer.sublayers objectAtIndex:1] removeFromSuperlayer];
-    }
-    
-    CALayer *sublayer = [CALayer layer];
-    sublayer.frame = CGRectInset(view.bounds, 8, 8);
-    sublayer.shadowPath = CGPathCreateWithRect(sublayer.frame, 0);
-    sublayer.shadowColor = [UIColor blueColor].CGColor;
-    sublayer.shadowRadius = 4.0f;
-    sublayer.borderWidth = 1.0f;
-    sublayer.borderColor = [UIColor blueColor].CGColor;
-    [view.layer addSublayer:sublayer];
-    
+-(void)setSelectedIndex:(int)index animated:(BOOL)animated {
+    UIView *view = [images objectAtIndex:index];
+    [self setSelectedView:view animated:animated];
+}
+
+-(void)setSelectedView:(UIView*)view animated:(BOOL)animated {
     selectedView = view;
     
     CGRect frame = CGRectMake(view.center.x - self.bounds.size.width / 2, 0, self.bounds.size.width, self.bounds.size.height);
-    [self scrollRectToVisible:frame animated:YES];
+    [self scrollRectToVisible:frame animated:animated];
 }
 
 -(void)setFrame:(CGRect)frame {
@@ -122,7 +117,15 @@
 
 -(void)addImageWithUrl:(NSURL *)url {
     [self addImageWithLoader:^UIImage *(NSError *__autoreleasing *error) {
-        return [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+        UIImage *image = nil;
+        NSData *data = [NSData dataWithContentsOfURL:url options:0 error:error];
+        if (!*error) {
+            image = [UIImage imageWithData:data];
+            if (!image) {
+                *error = [NSError errorWithDomain:@"nu.wetterberg.Flow" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"Could not read image", NSLocalizedDescriptionKey, nil]];
+            }
+        }
+        return image;
     }];
 }
 
@@ -142,6 +145,9 @@
     [loaderQueue addOperationWithBlock:^{
         NSError *error = nil;
         imageView.image = image(&error);
+        if (error) {
+            imageView.image = [self.flowDelegate flowFailedToLoadImage:idx];
+        }
         
         
         CGFloat size = self.bounds.size.width / 2;
