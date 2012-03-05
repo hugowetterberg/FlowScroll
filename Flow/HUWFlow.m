@@ -27,8 +27,9 @@
 -(void)__init {
     images = [NSMutableArray array];
     loaderQueue = [[NSOperationQueue alloc] init];
-    loaderQueue.maxConcurrentOperationCount = 1;
+    loaderQueue.maxConcurrentOperationCount = 2;
     self.delegate = nil;
+    latestAdded = 0;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapView:)];
     [self addGestureRecognizer:tap];
@@ -141,12 +142,13 @@
     int idx = [images indexOfObject:imageView];
     
     __block HUWFlow *s = self;
+    __block int *latest = &latestAdded;
     
     [loaderQueue addOperationWithBlock:^{
         NSError *error = nil;
         imageView.image = image(&error);
         if (error) {
-            imageView.image = [self.flowDelegate flowFailedToLoadImage:idx];
+            imageView.image = [s.flowDelegate flowFailedToLoadImage:idx];
         }
         
         CGRect frame = [s __frameForImage:imageView.image atIndex:idx];
@@ -161,8 +163,11 @@
         [imageView.layer addSublayer:sublayer];
         
         frame.size.width += frame.size.width / 2.0f;
-        CGSize contentSize = CGRectUnion(self.bounds, frame).size;
-        self.contentSize = contentSize;
+        if (idx >= *latest) {
+            CGSize contentSize = CGRectUnion(s.bounds, frame).size;
+            s.contentSize = contentSize;
+            *latest = idx;
+        }
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [s addSubview:imageView];

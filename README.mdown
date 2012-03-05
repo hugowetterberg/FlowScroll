@@ -4,3 +4,47 @@ Flow Scroll
 ![Screen shot](https://github.com/hugowetterberg/FlowScroll/raw/master/pictures/screen.png "The view in action")
 
 Sample code for creating a simple cover flow-esque scroll view. The view is implemented as a subclass of UIScrollView and is populated with images. The HUWFlowDelegate protocol can be used to recieve notifications when an image was selected or failed to load.
+
+Sample usage
+--------------------
+
+Sample usage from HUWViewController.m where the scrollView property is connected to a HUWFlow scroll view. Adds an image that's supposed to fail, to demonstrate the delegate fallback. And then adds the images specified in our json-file. The two delegate methods at the end should be self explanatory.
+
+    - (void)viewDidLoad
+    {
+        [super viewDidLoad];
+
+        self.scrollView.flowDelegate = self;
+        [self.scrollView addImageWithUrl:[NSURL URLWithString:@"http://example.com/nosuchimage.png"]];
+
+        NSArray *json = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"images" ofType:@"json"]] options:0 error:nil];
+        for (NSDictionary *info in json) {
+            NSURL *imageUrl = [[NSBundle mainBundle] URLForResource:[info objectForKey:@"name"] withExtension:@"jpg"];
+            [self.scrollView addImageWithUrl:imageUrl];
+        }
+    }
+
+    -(void)flowDidSelectItem:(int)index {
+        NSLog(@"Selected image #%d", index);
+    }
+
+    -(UIImage *)flowFailedToLoadImage:(int)index {
+        return [UIImage imageNamed:@"Elizabeth_Stanton.png"];
+    }
+
+Custom loaders with addImageWithLoader:
+-------------------------------------------
+
+The addImageWithUrl: method uses addImageWithLoader: internally. The loader block is always executed on a background thread.
+
+    [self addImageWithLoader:^UIImage *(NSError *__autoreleasing *error) {
+        UIImage *image = nil;
+        NSData *data = [NSData dataWithContentsOfURL:url options:0 error:error];
+        if (!*error) {
+            image = [UIImage imageWithData:data];
+            if (!image) {
+                *error = [NSError errorWithDomain:@"nu.wetterberg.Flow" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"Could not read image", NSLocalizedDescriptionKey, nil]];
+            }
+        }
+        return image;
+    }];

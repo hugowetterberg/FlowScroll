@@ -20,9 +20,8 @@
 {
     [super viewDidLoad];
     
-    [self.scrollView addImageWithUrl:[NSURL URLWithString:@"http://example.com/nosuchimage.png"]];
-    
     self.scrollView.flowDelegate = self;
+    [self.scrollView addImageWithUrl:[NSURL URLWithString:@"http://example.com/nosuchimage.png"]];
     
     NSArray *json = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"images" ofType:@"json"]] options:0 error:nil];
     for (NSDictionary *info in json) {

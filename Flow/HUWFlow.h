@@ -18,6 +18,7 @@ typedef UIImage* (^ImageLoaderBlock_t)(NSError** error);
     NSMutableArray *images;
     NSOperationQueue *loaderQueue;
     __weak UIView *selectedView;
+    int latestAdded;
 }
 
 @property (weak, nonatomic) id<HUWFlowDelegate> flowDelegate;
