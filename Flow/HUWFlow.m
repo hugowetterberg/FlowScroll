@@ -3,7 +3,7 @@
 //  Flow
 //
 //  Created by Hugo Wetterberg on 2012-03-02.
-//  Copyright (c) 2012 Good Old AB. All rights reserved.
+//  Copyright (c) 2012 Hugo Wetterberg. All rights reserved.
 //
 
 #import <QuartzCore/QuartzCore.h>

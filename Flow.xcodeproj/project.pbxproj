@@ -180,7 +180,7 @@
 			attributes = {
 				CLASSPREFIX = HUW;
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = "Good Old AB";
+				ORGANIZATIONNAME = "Hugo Wetterberg";
 			};
 			buildConfigurationList = 92430C5E1500EBE5004A3E6F /* Build configuration list for PBXProject "Flow" */;
 			compatibilityVersion = "Xcode 3.2";
