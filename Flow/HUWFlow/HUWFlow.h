@@ -22,6 +22,7 @@ typedef UIImage* (^ImageLoaderBlock_t)(NSError** error);
 }
 
 @property (weak, nonatomic) id<HUWFlowDelegate> flowDelegate;
+@property (assign) NSInteger maxConcurrentImageLoaders;
 
 -(void)addImageWithUrl:(NSURL *)url;
 -(void)addImage:(UIImage *)image;

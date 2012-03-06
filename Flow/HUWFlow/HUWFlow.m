@@ -27,7 +27,7 @@
 -(void)__init {
     images = [NSMutableArray array];
     loaderQueue = [[NSOperationQueue alloc] init];
-    loaderQueue.maxConcurrentOperationCount = 2;
+    self.maxConcurrentImageLoaders = 2;
     self.delegate = nil;
     latestAdded = 0;
     
@@ -51,6 +51,15 @@
     }
     return self;
 }
+
+-(NSInteger)maxConcurrentImageLoaders {
+    return loaderQueue.maxConcurrentOperationCount;
+}
+
+-(void)setMaxConcurrentImageLoaders:(NSInteger)maxConcurrentImageLoaders {
+    loaderQueue.maxConcurrentOperationCount = maxConcurrentImageLoaders;
+}
+
                                    
 -(void)didTapView:(UITapGestureRecognizer*)gesture {
     CGPoint point = [gesture locationInView:self];

@@ -4,7 +4,7 @@ Flow Scroll
 ![Screen shot](https://github.com/hugowetterberg/FlowScroll/raw/master/pictures/screen.png "The view in action")
 ![Screen shot](https://github.com/hugowetterberg/FlowScroll/raw/master/pictures/screen-loading.png "Activity indicator when loading")
 
-Sample code for creating a simple cover flow-esque scroll view. The view is implemented as a subclass of UIScrollView and is populated with images. The HUWFlowDelegate protocol can be used to recieve notifications when an image was selected or failed to load.
+HUWFlow is a UIScrollView subclass for creating a simple cover flow-esque scroll view. The HUWFlowDelegate protocol can be used to recieve notifications when an image was selected or failed to load. Images are loaded asynchronously in a background queue. The default limit for max concurrent loaders is 2 but this can be changed through the maxConcurrentImageLoaders property.
 
 Sample usage
 --------------------
