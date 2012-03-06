@@ -2,6 +2,7 @@ Flow Scroll
 ==================
 
 ![Screen shot](https://github.com/hugowetterberg/FlowScroll/raw/master/pictures/screen.png "The view in action")
+![Screen shot](https://github.com/hugowetterberg/FlowScroll/raw/master/pictures/screen-loading.png "Activity indicator when loading")
 
 Sample code for creating a simple cover flow-esque scroll view. The view is implemented as a subclass of UIScrollView and is populated with images. The HUWFlowDelegate protocol can be used to recieve notifications when an image was selected or failed to load.
 
@@ -35,7 +36,7 @@ Sample usage from HUWViewController.m where the scrollView property is connected
 Custom loaders with addImageWithLoader:
 -------------------------------------------
 
-The addImageWithUrl: method uses addImageWithLoader: internally. The loader block is always executed on a background thread.
+The addImageWithUrl: method uses addImageWithLoader: internally. The loader block is always executed on a background thread and an activity indicator is shown while loading.
 
     [self addImageWithLoader:^UIImage *(NSError *__autoreleasing *error) {
         UIImage *image = nil;
