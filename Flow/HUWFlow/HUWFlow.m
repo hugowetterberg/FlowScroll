@@ -101,17 +101,19 @@
     for (int i=0; i<[images count]; i++) {
         UIImageView *imageView = [images objectAtIndex:i];
         
-        CGRect imageRect = imageView.frame = [self __frameForImage:imageView.image atIndex:i];
-        
-        if (imageView.layer.sublayers.count) {
-            CALayer *sublayer = [imageView.layer.sublayers objectAtIndex:0];
-            UIImage *reflection = [HUWImageHelpers reflectedImage:imageView withHeight:50];
-            sublayer.contents = (id)reflection.CGImage;
-
-            CGRect reflFrame = sublayer.frame;
-            reflFrame.origin.y = imageRect.size.height + 20;
-            reflFrame.size.width = imageRect.size.width;
-            sublayer.frame = reflFrame;
+        if (imageView.image) {
+            CGRect imageRect = imageView.frame = [self __frameForImage:imageView.image atIndex:i];
+            
+            if (imageView.layer.sublayers.count) {
+                CALayer *sublayer = [imageView.layer.sublayers objectAtIndex:0];
+                UIImage *reflection = [HUWImageHelpers reflectedImage:imageView withHeight:50];
+                sublayer.contents = (id)reflection.CGImage;
+                
+                CGRect reflFrame = sublayer.frame;
+                reflFrame.origin.y = imageRect.size.height + 20;
+                reflFrame.size.width = imageRect.size.width;
+                sublayer.frame = reflFrame;
+            }
         }
         
         contentRect = CGRectUnion(contentRect, imageView.frame);
