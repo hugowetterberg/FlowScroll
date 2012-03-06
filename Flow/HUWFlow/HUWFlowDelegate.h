@@ -11,6 +11,6 @@
 @protocol HUWFlowDelegate <NSObject>
 
 -(void)flowDidSelectItem:(int)index;
--(UIImage*)flowFailedToLoadImage:(int)index;
+-(UIImage*)flowFailedToLoadImage:(int)index withError:(NSError*)error;
 
 @end

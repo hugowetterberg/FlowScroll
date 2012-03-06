@@ -34,7 +34,8 @@
     NSLog(@"Selected image #%d", index);
 }
 
--(UIImage *)flowFailedToLoadImage:(int)index {
+-(UIImage *)flowFailedToLoadImage:(int)index withError:(NSError *)error {
+    NSLog(@"%@", error);
     return [UIImage imageNamed:@"Elizabeth_Stanton.png"];
 }
 

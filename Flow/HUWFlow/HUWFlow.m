@@ -164,7 +164,7 @@
         NSError *error = nil;
         imageView.image = image(&error);
         if (error) {
-            imageView.image = [s.flowDelegate flowFailedToLoadImage:idx];
+            imageView.image = [s.flowDelegate flowFailedToLoadImage:idx withError:error];
         }
         
         CGRect frame = [s __frameForImage:imageView.image atIndex:idx];
