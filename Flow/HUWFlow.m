@@ -92,20 +92,20 @@
     for (int i=0; i<[images count]; i++) {
         UIImageView *imageView = [images objectAtIndex:i];
         
-        imageView.frame = [self __frameForImage:imageView.image atIndex:i];
+        CGRect imageRect = imageView.frame = [self __frameForImage:imageView.image atIndex:i];
         
         if (imageView.layer.sublayers.count) {
-            [[imageView.layer.sublayers objectAtIndex:0] removeFromSuperlayer];
+            CALayer *sublayer = [imageView.layer.sublayers objectAtIndex:0];
+            UIImage *reflection = [HUWImageHelpers reflectedImage:imageView withHeight:50];
+            sublayer.contents = (id)reflection.CGImage;
+
+            CGRect reflFrame = sublayer.frame;
+            reflFrame.origin.y = imageRect.size.height + 20;
+            reflFrame.size.width = imageRect.size.width;
+            sublayer.frame = reflFrame;
         }
         
-        UIImage *reflection = [HUWImageHelpers reflectedImage:imageView withHeight:50];
-        CALayer *sublayer = [CALayer layer];
-        sublayer.contents = (id)reflection.CGImage;
-        sublayer.opacity = 0.3;
-        sublayer.frame = CGRectMake(0, frame.size.height + 20, frame.size.width, reflection.size.height);
-        [imageView.layer addSublayer:sublayer];
-        
-        contentRect = CGRectUnion(contentRect, frame);
+        contentRect = CGRectUnion(contentRect, imageView.frame);
     }
     
     contentRect.size.width += size;
@@ -114,6 +114,7 @@
     CGPoint offset = self.contentOffset;
     offset.x = offset.x * ratio;
     self.contentOffset = offset;
+    [self __scrollViewDidScroll];
 }
 
 -(void)addImageWithUrl:(NSURL *)url {
@@ -193,12 +194,14 @@
 }
 
 -(CGRect)__frameForImage:(UIImage*)image atIndex:(int)idx {
-    CGFloat width = self.bounds.size.width / 2;
-    CGFloat aspect = image.size.width / width;
-    CGFloat height = image.size.height / aspect;
+    CGSize constraint = CGSizeMake(self.bounds.size.width / 2, self.bounds.size.height * 0.6283185307);
+    CGSize ratio = CGSizeMake(image.size.width / constraint.width, image.size.height / constraint.height);
+    CGFloat constraining = MAX(ratio.width, ratio.height);
+    CGSize scaled = CGSizeMake(image.size.width / constraining, image.size.height / constraining);
     
-    CGRect rect = CGRectMake(width / 2 + idx * width, self.bounds.size.height / 2 - height / 2,
-               width, height);
+    CGRect rect = CGRectMake(constraint.width * idx + constraint.width / 2, 
+                             self.bounds.size.height / 2 - scaled.height / 2,
+                             scaled.width, scaled.height);
     
     return CGRectIntegral(rect);
 }
