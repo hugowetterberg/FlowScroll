@@ -1,10 +1,14 @@
 Flow Scroll
 ==================
 
-![Screen shot](https://github.com/hugowetterberg/FlowScroll/raw/master/pictures/screen.png "The view in action")
-![Screen shot](https://github.com/hugowetterberg/FlowScroll/raw/master/pictures/screen-loading.png "Activity indicator when loading")
-
 HUWFlow is a UIScrollView subclass for creating a simple cover flow-esque scroll view. The HUWFlowDelegate protocol can be used to recieve notifications when an image was selected or failed to load. Images are loaded asynchronously in a background queue. The default limit for max concurrent loaders is 2 but this can be changed through the maxConcurrentImageLoaders property.
+
+Gracefully handles frame changes, most commonly caused by an orientation change. Scroll position is maintained and images are re-positioned to make use of / adapt to the new viewport size.
+
+![Screen shot](https://github.com/hugowetterberg/FlowScroll/raw/master/pictures/screen.png "The view in action")
+![Screen shot of activity indicator](https://github.com/hugowetterberg/FlowScroll/raw/master/pictures/screen-loading.png "Activity indicator when loading")
+![Screen shot of the view in landscape orientation](https://github.com/hugowetterberg/FlowScroll/raw/master/pictures/screen-landscape.png "Landscape orientation")
+
 
 Sample usage
 --------------------
