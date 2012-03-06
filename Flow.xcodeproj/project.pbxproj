@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		9213E743150557DC00C7E970 /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 9213E742150557DC00C7E970 /* README.mdown */; };
 		9213E74615055BE400C7E970 /* Elizabeth_Stanton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9213E74515055BE400C7E970 /* Elizabeth_Stanton.png */; };
-		9241BE6E1501716B00C670CD /* HUWImageHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9241BE6D1501716B00C670CD /* HUWImageHelpers.m */; };
-		9241BE7215017EB100C670CD /* HUWFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9241BE7115017EB100C670CD /* HUWFlow.m */; };
-		9241BE75150183D100C670CD /* HUWFlowDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9241BE74150183D100C670CD /* HUWFlowDelegateWrapper.m */; };
+		9213E751150608F400C7E970 /* HUWFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9213E74B150608F400C7E970 /* HUWFlow.m */; };
+		9213E752150608F400C7E970 /* HUWFlowDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9213E74E150608F400C7E970 /* HUWFlowDelegateWrapper.m */; };
+		9213E753150608F400C7E970 /* HUWImageHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9213E750150608F400C7E970 /* HUWImageHelpers.m */; };
 		92430C691500EBE5004A3E6F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92430C681500EBE5004A3E6F /* UIKit.framework */; };
 		92430C6B1500EBE5004A3E6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92430C6A1500EBE5004A3E6F /* Foundation.framework */; };
 		92430C6D1500EBE5004A3E6F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92430C6C1500EBE5004A3E6F /* CoreGraphics.framework */; };
@@ -34,14 +34,14 @@
 
 /* Begin PBXFileReference section */
 		9213E742150557DC00C7E970 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
-		9213E7441505585200C7E970 /* HUWFlowDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUWFlowDelegate.h; sourceTree = "<group>"; };
 		9213E74515055BE400C7E970 /* Elizabeth_Stanton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Elizabeth_Stanton.png; sourceTree = "<group>"; };
-		9241BE6C1501716B00C670CD /* HUWImageHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUWImageHelpers.h; sourceTree = "<group>"; };
-		9241BE6D1501716B00C670CD /* HUWImageHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUWImageHelpers.m; sourceTree = "<group>"; };
-		9241BE7015017EB100C670CD /* HUWFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUWFlow.h; sourceTree = "<group>"; };
-		9241BE7115017EB100C670CD /* HUWFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUWFlow.m; sourceTree = "<group>"; };
-		9241BE73150183D100C670CD /* HUWFlowDelegateWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUWFlowDelegateWrapper.h; sourceTree = "<group>"; };
-		9241BE74150183D100C670CD /* HUWFlowDelegateWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUWFlowDelegateWrapper.m; sourceTree = "<group>"; };
+		9213E74A150608F400C7E970 /* HUWFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUWFlow.h; sourceTree = "<group>"; };
+		9213E74B150608F400C7E970 /* HUWFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUWFlow.m; sourceTree = "<group>"; };
+		9213E74C150608F400C7E970 /* HUWFlowDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUWFlowDelegate.h; sourceTree = "<group>"; };
+		9213E74D150608F400C7E970 /* HUWFlowDelegateWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUWFlowDelegateWrapper.h; sourceTree = "<group>"; };
+		9213E74E150608F400C7E970 /* HUWFlowDelegateWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUWFlowDelegateWrapper.m; sourceTree = "<group>"; };
+		9213E74F150608F400C7E970 /* HUWImageHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUWImageHelpers.h; sourceTree = "<group>"; };
+		9213E750150608F400C7E970 /* HUWImageHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUWImageHelpers.m; sourceTree = "<group>"; };
 		92430C641500EBE5004A3E6F /* Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92430C681500EBE5004A3E6F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		92430C6A1500EBE5004A3E6F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -82,6 +82,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9213E749150608C200C7E970 /* HUWFlow */ = {
+			isa = PBXGroup;
+			children = (
+				9213E74A150608F400C7E970 /* HUWFlow.h */,
+				9213E74B150608F400C7E970 /* HUWFlow.m */,
+				9213E74C150608F400C7E970 /* HUWFlowDelegate.h */,
+				9213E74D150608F400C7E970 /* HUWFlowDelegateWrapper.h */,
+				9213E74E150608F400C7E970 /* HUWFlowDelegateWrapper.m */,
+				9213E74F150608F400C7E970 /* HUWImageHelpers.h */,
+				9213E750150608F400C7E970 /* HUWImageHelpers.m */,
+			);
+			path = HUWFlow;
+			sourceTree = "<group>";
+		};
 		92430C591500EBE5004A3E6F = {
 			isa = PBXGroup;
 			children = (
@@ -115,19 +129,13 @@
 		92430C6E1500EBE5004A3E6F /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				9213E749150608C200C7E970 /* HUWFlow */,
 				92430C771500EBE5004A3E6F /* HUWAppDelegate.h */,
 				92430C781500EBE5004A3E6F /* HUWAppDelegate.m */,
 				92430C7A1500EBE5004A3E6F /* MainStoryboard.storyboard */,
 				92430C7D1500EBE5004A3E6F /* HUWViewController.h */,
 				92430C7E1500EBE5004A3E6F /* HUWViewController.m */,
 				92430C6F1500EBE5004A3E6F /* Supporting Files */,
-				9241BE6C1501716B00C670CD /* HUWImageHelpers.h */,
-				9241BE6D1501716B00C670CD /* HUWImageHelpers.m */,
-				9241BE7015017EB100C670CD /* HUWFlow.h */,
-				9241BE7115017EB100C670CD /* HUWFlow.m */,
-				9241BE73150183D100C670CD /* HUWFlowDelegateWrapper.h */,
-				9241BE74150183D100C670CD /* HUWFlowDelegateWrapper.m */,
-				9213E7441505585200C7E970 /* HUWFlowDelegate.h */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -238,9 +246,9 @@
 				92430C751500EBE5004A3E6F /* main.m in Sources */,
 				92430C791500EBE5004A3E6F /* HUWAppDelegate.m in Sources */,
 				92430C7F1500EBE5004A3E6F /* HUWViewController.m in Sources */,
-				9241BE6E1501716B00C670CD /* HUWImageHelpers.m in Sources */,
-				9241BE7215017EB100C670CD /* HUWFlow.m in Sources */,
-				9241BE75150183D100C670CD /* HUWFlowDelegateWrapper.m in Sources */,
+				9213E751150608F400C7E970 /* HUWFlow.m in Sources */,
+				9213E752150608F400C7E970 /* HUWFlowDelegateWrapper.m in Sources */,
+				9213E753150608F400C7E970 /* HUWImageHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
