@@ -12,6 +12,8 @@
 		9213E751150608F400C7E970 /* HUWFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9213E74B150608F400C7E970 /* HUWFlow.m */; };
 		9213E752150608F400C7E970 /* HUWFlowDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9213E74E150608F400C7E970 /* HUWFlowDelegateWrapper.m */; };
 		9213E753150608F400C7E970 /* HUWImageHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9213E750150608F400C7E970 /* HUWImageHelpers.m */; };
+		9213E7561506554500C7E970 /* CONTRIBUTING.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9213E7541506554500C7E970 /* CONTRIBUTING.txt */; };
+		9213E7571506554500C7E970 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9213E7551506554500C7E970 /* LICENSE */; };
 		92430C691500EBE5004A3E6F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92430C681500EBE5004A3E6F /* UIKit.framework */; };
 		92430C6B1500EBE5004A3E6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92430C6A1500EBE5004A3E6F /* Foundation.framework */; };
 		92430C6D1500EBE5004A3E6F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92430C6C1500EBE5004A3E6F /* CoreGraphics.framework */; };
@@ -42,6 +44,8 @@
 		9213E74E150608F400C7E970 /* HUWFlowDelegateWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUWFlowDelegateWrapper.m; sourceTree = "<group>"; };
 		9213E74F150608F400C7E970 /* HUWImageHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUWImageHelpers.h; sourceTree = "<group>"; };
 		9213E750150608F400C7E970 /* HUWImageHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUWImageHelpers.m; sourceTree = "<group>"; };
+		9213E7541506554500C7E970 /* CONTRIBUTING.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CONTRIBUTING.txt; sourceTree = "<group>"; };
+		9213E7551506554500C7E970 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		92430C641500EBE5004A3E6F /* Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92430C681500EBE5004A3E6F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		92430C6A1500EBE5004A3E6F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -99,6 +103,8 @@
 		92430C591500EBE5004A3E6F = {
 			isa = PBXGroup;
 			children = (
+				9213E7541506554500C7E970 /* CONTRIBUTING.txt */,
+				9213E7551506554500C7E970 /* LICENSE */,
 				9213E742150557DC00C7E970 /* README.mdown */,
 				92430C851500ECC1004A3E6F /* pictures */,
 				92430C6E1500EBE5004A3E6F /* Flow */,
@@ -233,6 +239,8 @@
 				92430C971500ECD4004A3E6F /* images.json in Resources */,
 				9213E743150557DC00C7E970 /* README.mdown in Resources */,
 				9213E74615055BE400C7E970 /* Elizabeth_Stanton.png in Resources */,
+				9213E7561506554500C7E970 /* CONTRIBUTING.txt in Resources */,
+				9213E7571506554500C7E970 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

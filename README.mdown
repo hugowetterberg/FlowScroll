@@ -9,7 +9,6 @@ Gracefully handles frame changes, most commonly caused by an orientation change.
 ![Screen shot of activity indicator](https://github.com/hugowetterberg/FlowScroll/raw/master/pictures/screen-loading.png "Activity indicator when loading")
 ![Screen shot of the view in landscape orientation](https://github.com/hugowetterberg/FlowScroll/raw/master/pictures/screen-landscape.png "Landscape orientation")
 
-
 Sample usage
 --------------------
 
@@ -54,3 +53,12 @@ The addImageWithUrl: method uses addImageWithLoader: internally. The loader bloc
         }
         return image;
     }];
+
+License
+-------------
+
+HUWFlow is licensed under the ISC license, which is a simplified version of the "Simplified BSD License". Yeah I know, simple, simplified, simplifieder. But it is short and easy to follow and boils down to this: use and modify freely, distribute for a fee or for free, I don't care, make money and be happy. BUT you must attribute me in all copies, that is: in your app and in the copied source code.
+
+You can purchase a non-attribution license here: [https://gumroad.com/l/Ws](https://gumroad.com/l/Ws). Make sure that you enter a proper email-address as that is the only way a can confirm that you have bought a license.
+
+Contributions are subject to the terms specified in CONTRIBUTING.txt
