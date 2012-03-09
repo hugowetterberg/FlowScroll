@@ -63,7 +63,7 @@ Contributions are subject to the terms specified in CONTRIBUTING.txt
 
 ### Non attribution license
 
-You can purchase a non-attribution license here: [https://gumroad.com/l/Ws](https://gumroad.com/l/Ws). Make sure that you enter a proper email-address as that is the only way a can confirm that you have bought a license. I will then send you a properly PGP signed license which can be verified with [this public key](http://wetterberg.nu/hugo.at.wetterberg.asc). The terms of this non-attribution license are as follows:
+You can purchase a non-attribution license here: [https://gumroad.com/l/Wsa](https://gumroad.com/l/Wsa). Make sure that you enter a proper email-address as that is the only way a can confirm that you have bought a license. I will then send you a properly PGP signed license which can be verified with [this public key](http://wetterberg.nu/hugo.at.wetterberg.asc). The terms of this non-attribution license are as follows:
 
     This license permits use and modification of the offered source code for your own commercial or free apps. If you are using this code in a contracting project for a third party this party is also required to purchase a non-attribution license.
 
