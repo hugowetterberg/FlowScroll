@@ -59,6 +59,14 @@ License
 
 HUWFlow is licensed under the ISC license, which is a simplified version of the "Simplified BSD License". Yeah I know, simple, simplified, simplifieder. But it is short and easy to follow and boils down to this: use and modify freely, distribute for a fee or for free, I don't care, make money and be happy. BUT you must attribute me in all copies, that is: in your app and in the copied source code.
 
-You can purchase a non-attribution license here: [https://gumroad.com/l/Ws](https://gumroad.com/l/Ws). Make sure that you enter a proper email-address as that is the only way a can confirm that you have bought a license.
-
 Contributions are subject to the terms specified in CONTRIBUTING.txt
+
+### Non attribution license
+
+You can purchase a non-attribution license here: [https://gumroad.com/l/Ws](https://gumroad.com/l/Ws). Make sure that you enter a proper email-address as that is the only way a can confirm that you have bought a license. I will then send you a properly PGP signed license which can be verified with [this public key](http://wetterberg.nu/hugo.at.wetterberg.asc). The terms of this non-attribution license are as follows:
+
+    This license permits use and modification of the offered source code for your own commercial or free apps. If you are using this code in a contracting project for a third party this party is also required to purchase a non-attribution license.
+
+    You may not grant this access to third parties without the express written consent of Hugo Wetterberg. Nor shall you resell or rebrand this component to third parties as your own intellectual property.
+
+    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
